@@ -1,30 +1,18 @@
 <div class="flex h-screen overflow-y-hidden bg-gray-50">
 
-  <!-- Loading screen -->
-  <!-- <div
-        class="fixed inset-0 z-50 flex items-center justify-center text-white bg-black bg-opacity-50"
-        style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
-      >
-        Loading.....
-      </div> -->
-
-  <!-- <div
-
-        class="fixed inset-0 z-10 bg-black bg-opacity-20 lg:hidden"
-        style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
-      ></div> -->
-  <!-- [ngClass]=" 'isSidebarOpen'? '-translate-x-full' : '-translate-x-full'" -->
-  <!-- [ngClass]="'isSidebarOpen'? '-translate-x-full lg:translate-x-0 lg:w-46' : '!isSidebarOpen'" -->
-
 
   <!-- Sidebar -->
-  <app-sidenav ></app-sidenav>
+  <app-sidenav [ngClass]=" isSidebarOpen ? '-translate-x-full w-0 transition-all duration-300 ease-in-out' : ' w-50'"
+  [ngClass]="isSidebarReduced ? '-translate-x-full w-16 items-center justify-center ml-2 transition-all duration-300 ease-in': 'translate-x-0'"
+  ></app-sidenav>
   <div class="flex flex-col flex-1 h-full overflow-hidden ">
     <!-- Navbar -->
     <app-navbar (toggleSideNav)="toggleSidebarMenu($event)" ></app-navbar>
 
     <!-- Main content -->
-    <div class="overflow-auto"> <app-main></app-main></div>
+    <div class="overflow-auto">
+       <app-main></app-main>
+      </div>
 
 
     <!-- Main footer -->
@@ -32,21 +20,21 @@
   </div>
 
   <!-- Setting panel button -->
-  <div>
-    <button (click)="toggleSettings()"
-      class=" fixed right-0 px-4 py-2 text-sm font-medium text-white uppercase transform rotate-90 translate-x-8 bg-gray-600 top-1/2 rounded-b-md">
-      Settings
+  <div >
+    <button (click)="this.isSettingsPanelOpen = ! this.isSettingsPanelOpen"
+      class=" fixed justify-center right-10 p-2 text-sm font-medium text-white uppercase transform rotate-180 translate-x-8 bg-sellar-primary top-3/4 rounded-full w-10 h-10 ">
+      <mat-icon class=" animate-spin">settings</mat-icon>
     </button>
   </div>
 
   <!-- Settings panel -->
-  <div [ngClass]=" !isSettingsPanelOpen ? 'translate-x-full transform duration-300  w-0' : 'hidden inset-y-0 right-0'  "
-    class="hidden fixed inset-y-0 right-0 lg:flex flex-col bg-white shadow-lg bg-opacity-20 w-80"
+  <div [ngClass]=" !isSettingsPanelOpen ? 'translate-x-full transform duration-300  w-0' : ' inset-y-0 right-0'  "
+    class=" fixed inset-y-0 right-0 flex-col bg-white shadow-lg bg-opacity-20 w-80"
     style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)">
     <div class="flex items-center justify-between flex-shrink-0 p-2">
       <h6 class="p-2 text-lg">Settings</h6>
-      <button (click)="toggleSettings()" class="p-2 rounded-md focus:outline-none focus:ring">
-        <svg class="w-6 h-6 text-gray-600 bg-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="none"
+      <button (click)="this.isSettingsPanelOpen = ! this.isSettingsPanelOpen" class="p-2 rounded-md focus:outline-none focus:ring">
+        <svg class="w-6 h-6 text-gray-600 border border-sellar-primary" xmlns="http://www.w3.org/2000/svg" fill="none"
           viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -55,6 +43,18 @@
     <div class="flex-1 max-h-full p-4 overflow-hidden hover:overflow-y-scroll">
       <span>Settings Content</span>
       <!-- Settings Panel Content ... -->
+     <div class="flex flex-row gap-4 items-center mt-2">
+      <div class="rounded-full w-6 h-6 bg-yellow-500">
+
+      </div>
+      <div class="rounded-full w-6 h-6 bg-green-500">
+
+      </div>
+      <div class="rounded-full w-6 h-6 bg-red-500">
+
+      </div>
+     </div>
+
     </div>
   </div>
 

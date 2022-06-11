@@ -7,22 +7,78 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   isSidebarOpen = true;
-  open = false
+ userLink = {
+    name: 'Login',
+    url: '/login',
+    icon: 'account_circle',
+    isOpen: false
+ }
   @Output () toggleSideNav: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  links = [
+
+    {
+      name: 'Login',
+      url: '/login',
+      icon: 'notifications',
+      isOpen: false,
+
+      sublinks: [
+        {
+          name: 'Pass',
+          url: '/monUrl',
+          icon: 'notifications',
+          isOpen: false,
+
+        },
+        {
+          name: 'Pass',
+          url: '/monUrl',
+          icon: 'people',
+          isOpen: false,
+        },
+
+      ]
+
+    },
+    {
+      name: 'Settings',
+      url: '/login',
+      icon: 'account_circle',
+      isOpen: false,
+
+      sublinks: [
+        {
+          name: 'Pass',
+          url: '/monUrl',
+          icon: 'manage_accounts',
+          isOpen: false,
+
+        },
+        {
+          name: 'Pass',
+          url: '/monUrl',
+          icon: 'people',
+          isOpen: false,
+        },
+
+      ]
+
+    },
+
+  ]
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  toggleSidebarMenu() {
-    this.isSidebarOpen = !this.isSidebarOpen
-    this.toggleSideNav.emit(this.isSidebarOpen);
-
     console.log(this.isSidebarOpen);
 
   }
 
-  menuOpen() {
-    this.open = !this.open
+  toggleSidebarMenu() {
+    // this.toggleSideNav.emit(this.isSidebarOpen);
+    console.log(this.isSidebarOpen);
+
   }
+
+
 }

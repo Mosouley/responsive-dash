@@ -11,52 +11,58 @@ export class SidenavComponent implements OnInit {
   loading = true;
   isSidebarOpen = true;
   isSettingsPanelOpen = false;
-  isSearchBoxOpen = false;
+  isArrowOpen = false;
   isSidebarReduced = false;
 
   links = [
+    {
+      name: 'Tableau de bord',
+      url: '',
+      icon: 'dashboard',
+      action: ''
+    },
 
     {
       name: 'Categories',
-      url: 'category',
+      url: '',
       icon: 'category',
       action: true
     },
     {
       name: 'Produits',
-      url: 'produit',
+      url: '',
       icon: 'qr_code',
       action: true
     },
 
     {
       name: 'Fournisseurs',
-      url: 'fournisseur',
+      url: '',
       icon: 'list',
       action: ''
     },
     {
       name: 'Clients',
-      url: 'client',
+      url: '',
       icon: 'contact_page',
       action: ''
     },
     {
       name: 'Dépenses',
-      url: 'spendings',
+      url: '',
       icon: 'fingerprint',
       action: ''
     },
 
     {
       name: 'Entrees Stock',
-      url: 'appro',
+      url: '',
       icon: 'inventory',
       action: ''
     },
     {
       name: 'Rapports',
-      url: 'rapport',
+      url: '',
       icon: 'reporting',
       action: ''
     },
@@ -68,21 +74,17 @@ export class SidenavComponent implements OnInit {
     // },
     {
       name: 'Utilisateurs',
-      url: 'user',
+      url: '',
       icon: 'people',
       action: ''
     },
     {
       name: 'Configuration',
-      url: 'company',
+      url: '',
       icon: 'admin_panel_settings',
       action: ''
-    }, {
-      name: 'Tableau de bord',
-      url: 'dash',
-      icon: 'dashboard',
-      action: ''
-    }
+    },
+
 
   ];
   constructor() {

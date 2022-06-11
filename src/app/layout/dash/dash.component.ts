@@ -97,16 +97,13 @@ export class DashComponent implements OnInit {
 
   toggleSidebarMenu($event: any) {
     this.isSidebarOpen = $event;
+    console.log($event);
+
 
   }
   reduceSideMenu() {
     this.isSidebarReduced = !this.isSidebarReduced
   }
 
-  toggleSettings() {
-    this.isSettingsPanelOpen = ! this.isSettingsPanelOpen
-    console.log('after toglling ' + this.isSettingsPanelOpen);
-
-  }
 
 }

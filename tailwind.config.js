@@ -21,6 +21,8 @@ module.exports = {
         'default-text-color':'#72777a',
         'default-warning':'#fc0',
         'default-white':'#fff',
+        'sellar-primary': '#7b57f6',
+        'windows-green':'#7ab378'
       }
     },
   },
