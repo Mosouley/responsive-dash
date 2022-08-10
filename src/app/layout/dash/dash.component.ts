@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 
 
@@ -10,13 +10,15 @@ import { Output, EventEmitter } from '@angular/core';
 export class DashComponent implements OnInit {
 
   numCards = Array.from(Array(10).keys());
-  loading = true;
+
   isSidebarOpen = true;
   isSettingsPanelOpen = false;
-  isSearchBoxOpen = false;
+  // isSearchBoxOpen = false;
   isSidebarReduced = false;
-  @Output() newItemEvent = new EventEmitter<string>();
+
   @Output () toggleSideNav: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+
   links = [
 
     {
@@ -91,18 +93,17 @@ export class DashComponent implements OnInit {
   constructor() {
    }
 
-  ngOnInit(): void {
-    console.log(this.isSettingsPanelOpen);
-  }
 
+  ngOnInit(): void {}
   toggleSidebarMenu($event: any) {
     this.isSidebarOpen = $event;
-    console.log($event);
-
-
   }
-  reduceSideMenu() {
-    this.isSidebarReduced = !this.isSidebarReduced
+
+  toggleSidebarReduce($event: any) {
+    this.isSidebarReduced = $event;
+  }
+  toggleSettingsMenu($event: any) {
+    this.isSettingsPanelOpen = $event;
   }
 
 

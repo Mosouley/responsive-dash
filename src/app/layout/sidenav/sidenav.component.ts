@@ -1,70 +1,215 @@
-import { Component, OnInit } from '@angular/core';
+import { MenuNode } from './../../shared/menu-node';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NestedTreeControl } from '@angular/cdk/tree';
+import { MatTreeNestedDataSource } from '@angular/material/tree';
+import { ActivatedRoute, Router } from '@angular/router';
+
+// const MENU_DATA: MenuNode [] = [
+//   {
+//     name: 'Dashboard',
+//     url: '',
+//     icon: 'speed',
+//     action: false
+//   },
+//   {
+//     name: 'Categories',
+//     url: '',
+//     icon: 'category',
+//     action: false,
+//     children: [
+//       {
+//         name: 'Categories',
+//         url: '',
+//         icon: 'category',
+//         action: false
+//       },
+//       {
+//         name: 'Produits',
+//         url: '',
+//         icon: 'qr_code',
+//         action: false
+//       },
+
+//       {
+//         name: 'Fournisseurs',
+//         url: '',
+//         icon: 'list',
+//         action: false
+//       },
+//       {
+//         name: 'Clients',
+//         url: '',
+//         icon: 'contact_page',
+//         action: false
+//       },
+//     ]
+//   },
+//   {
+//     name: 'Produits',
+//     url: '',
+//     icon: 'qr_code',
+//     action: false,
+//     children: [
+//       {
+//         name: 'Fournisseurs',
+//         url: '',
+//         icon: 'list',
+//         action: false
+//       },
+//       {
+//         name: 'Clients',
+//         url: '',
+//         icon: 'contact_page',
+//         action: false
+//       },
+//       {
+//         name: 'Dépenses',
+//         url: '',
+//         icon: 'fingerprint',
+//         action: false,
+//         children: [
+//           {
+//             name: 'Clients',
+//             url: '',
+//             icon: 'contact_page',
+//             action: false
+//           },
+//           {
+//             name: 'Dépenses',
+//             url: '',
+//             icon: 'fingerprint',
+//             action: false
+//           },
+//         ]
+//       },
+
+//       {
+//         name: 'Entrees Stock',
+//         url: '',
+//         icon: 'inventory',
+//         action: false
+//       },
+//       {
+//         name: 'Rapports',
+//         url: '',
+//         icon: 'reporting',
+//         action: false
+//       },
+//     ]
+//   },
+//   {
+//     name: 'Utilisateurs',
+//     url: '',
+//     icon: 'people',
+//     action: false
+//   },
+//   {
+//     name: 'Configuration',
+//     url: '',
+//     icon: 'admin_panel_settings',
+//     action: false
+//   },
+// ]
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent implements OnInit{
 
+  // cards template to display the  dashboard on cards
   numCards = Array.from(Array(10).keys());
-  loading = true;
-  isSidebarOpen = true;
-  isSettingsPanelOpen = false;
-  isArrowOpen = false;
-  isSidebarReduced = false;
+  // creating input and output variable for sidebar reduction
+  @Input() isSidebarReduced = false;
+  @Output () toggleSidebarReduce: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  links = [
+  // creating input variable to toglle sidebar close/open
+  @Input() isSidebarOpen = true;
+
+  // variable sidebar links
+  links: MenuNode[] = [
     {
-      name: 'Tableau de bord',
-      url: '',
-      icon: 'dashboard',
-      action: ''
+      name: 'Dashboard',
+      url: 'main',
+      icon: 'speed',
+      action: false,
+      expandable: false
     },
 
     {
       name: 'Categories',
-      url: '',
+      url: 'home',
       icon: 'category',
-      action: true
+      action: false,
+      expandable: true,
+      children: [
+        {
+          name: 'Analytics',
+          url: 'analytics',
+          icon: 'contact_page',
+          action: false
+        },
+        {
+          name: 'Applications',
+          url: 'app1',
+          icon: 'fingerprint',
+          action: false
+        },
+      ]
     },
     {
       name: 'Produits',
-      url: '',
+      url: 'app1',
       icon: 'qr_code',
-      action: true
+      action: false
     },
 
     {
       name: 'Fournisseurs',
       url: '',
       icon: 'list',
-      action: ''
+      action: false
     },
     {
       name: 'Clients',
-      url: '',
+      url: 'main',
       icon: 'contact_page',
-      action: ''
+      action: false
     },
     {
       name: 'Dépenses',
       url: '',
       icon: 'fingerprint',
-      action: ''
+      action: false,
+      expandable: true,
+      children: [
+        {
+          name: 'Clients',
+          url: '',
+          icon: 'contact_page',
+          action: false
+        },
+        {
+          name: 'Dépenses',
+          url: '',
+          icon: 'fingerprint',
+          action: false
+        },
+      ]
     },
 
     {
       name: 'Entrees Stock',
-      url: '',
+      url: 'main',
       icon: 'inventory',
-      action: ''
+      action: false
     },
     {
       name: 'Rapports',
-      url: '',
+      url: 'main',
       icon: 'reporting',
-      action: ''
+      action: false
     },
     // {
     //   name: 'Factures',
@@ -74,82 +219,50 @@ export class SidenavComponent implements OnInit {
     // },
     {
       name: 'Utilisateurs',
-      url: '',
+      url: 'main',
       icon: 'people',
-      action: ''
+      action: false
     },
     {
       name: 'Configuration',
-      url: '',
+      url: 'home',
       icon: 'admin_panel_settings',
-      action: ''
+      action: false,
+      expandable: true,
+      children: [
+        {
+          name: 'Colors',
+          url: 'analytics',
+          icon: 'contact_page',
+          action: false
+        },
+        {
+          name: 'Side Panel',
+          url: 'app1',
+          icon: 'fingerprint',
+          action: false
+        },
+      ]
     },
 
 
   ];
-  constructor() {
-   }
+
+  constructor(private localRouter: ActivatedRoute) {}
 
   ngOnInit(): void {
 
   }
+  // component property to check if a menu has children
+   hasChild = ( menu:MenuNode) => !!menu.children && menu.children.length > 0;
 
-  toggleSidebarMenu() {
-    this.isSidebarOpen = !this.isSidebarOpen
-  }
-  // reduceSideMenu() {
-  //   this.isSidebarReduced = !this.isSidebarReduced
-  // }
+  // get the list of menus of any menu item
+   getListofMenu(myAray: MenuNode[]): string[] {
+      let output: string[] = [];
+      myAray.forEach((element) => {
+        output.push(element.name)
+    });
+    return output;
+   }
 
-/**
- * group
- */
-
-  //
-  // <button mat-button [matMenuTriggerFor]="animals">Menu</button>
-//   <mat-menu #animals="matMenu">
-//   <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-//   <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
-// </mat-menu>
-
-// <mat-menu #vertebrates="matMenu">
-//   <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-//   <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
-//   <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
-//   <button mat-menu-item>Birds</button>
-//   <button mat-menu-item>Mammals</button>
-// </mat-menu>
-
-// <mat-menu #invertebrates="matMenu">
-//   <button mat-menu-item>Insects</button>
-//   <button mat-menu-item>Molluscs</button>
-//   <button mat-menu-item>Crustaceans</button>
-//   <button mat-menu-item>Corals</button>
-//   <button mat-menu-item>Arachnids</button>
-//   <button mat-menu-item>Velvet worms</button>
-//   <button mat-menu-item>Horseshoe crabs</button>
-// </mat-menu>
-
-// <mat-menu #fish="matMenu">
-//   <button mat-menu-item>Baikal oilfish</button>
-//   <button mat-menu-item>Bala shark</button>
-//   <button mat-menu-item>Ballan wrasse</button>
-//   <button mat-menu-item>Bamboo shark</button>
-//   <button mat-menu-item>Banded killifish</button>
-// </mat-menu>
-
-// <mat-menu #amphibians="matMenu">
-//   <button mat-menu-item>Sonoran desert toad</button>
-//   <button mat-menu-item>Western toad</button>
-//   <button mat-menu-item>Arroyo toad</button>
-//   <button mat-menu-item>Yosemite toad</button>
-// </mat-menu>
-
-// <mat-menu #reptiles="matMenu">
-//   <button mat-menu-item>Banded Day Gecko</button>
-//   <button mat-menu-item>Banded Gila Monster</button>
-//   <button mat-menu-item>Black Tree Monitor</button>
-//   <button mat-menu-item>Blue Spiny Lizard</button>
-//   <button mat-menu-item disabled>Velociraptor</button>
-// </mat-menu>
 }

@@ -1,61 +1,47 @@
-<div class="flex h-screen overflow-y-hidden bg-gray-50">
-
+<!--     style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)" -->
+<!--   class="hidden h-full  inset-y-0  lg:flex flex-col flex-shrink-0 max-h-screen overflow-hidden border-r bg-white shadow-lg lg:static lg:w-60 lg:shadow-lg" -->
+<div class="flex h-screen overflow-y-scroll bg-gray-50">
+<!--   [ngClass]=" isSidebarOpen && !isSidebarReduced ? 'sm:w-12 transform place-items-center justify-center ml-1 transition-all duration-300 ease-in  ' : ' bg-cyan-600 w-60'"
+  [ngClass]="isSidebarReduced ? ' transform items-center justify-center ml-1 transition-all duration-100 ease-in  ': 'transform-none'" -->
 
   <!-- Sidebar -->
-  <app-sidenav [ngClass]=" isSidebarOpen ? '-translate-x-full w-0 transition-all duration-300 ease-in-out' : ' w-50'"
-  [ngClass]="isSidebarReduced ? '-translate-x-full w-16 items-center justify-center ml-2 transition-all duration-300 ease-in': 'translate-x-0'"
-  ></app-sidenav>
+  <app-sidenav
+  (toggleSidebarReduce)="toggleSidebarReduce($event)"
+  [isSidebarReduced]="isSidebarReduced"
+  [isSidebarOpen]="isSidebarOpen"
+  [ngClass]=" isSidebarOpen ? ' transform transition-all duration-300 w-60 ease-in ' : ' -translate-x-full transition-all duration-300 ease-out w-0'"
+  [ngClass]="isSidebarReduced ? '  sm:w-12 transform place-items-center justify-center transition-all duration-300 ease-in bg-sellar-primary': 'transform ease-out duration-300 '"
+  [ngClass]=" isSidebarOpen && isSidebarReduced ? 'hidden transform transition-all duration-300  sm:w-12 ease-in ' : ' transform-none'"
+  >
+  </app-sidenav>
+
   <div class="flex flex-col flex-1 h-full overflow-hidden ">
     <!-- Navbar -->
-    <app-navbar (toggleSideNav)="toggleSidebarMenu($event)" ></app-navbar>
+    <app-navbar (toggleSideNav)="isSidebarOpen =!isSidebarOpen; toggleSidebarMenu(isSidebarOpen)"></app-navbar>
 
     <!-- Main content -->
     <div class="overflow-auto">
-       <app-main></app-main>
-      </div>
-
+      <router-outlet></router-outlet>
+    </div>
 
     <!-- Main footer -->
-    <app-footer></app-footer>
+    <app-footer class=" fixed justify-between gap-5 bottom-2 p-1"></app-footer>
   </div>
 
   <!-- Setting panel button -->
-  <div >
-    <button (click)="this.isSettingsPanelOpen = ! this.isSettingsPanelOpen"
+  <div>
+    <button (click)="isSettingsPanelOpen =!isSettingsPanelOpen"
       class=" fixed justify-center right-10 p-2 text-sm font-medium text-white uppercase transform rotate-180 translate-x-8 bg-sellar-primary top-3/4 rounded-full w-10 h-10 ">
       <mat-icon class=" animate-spin">settings</mat-icon>
     </button>
   </div>
 
   <!-- Settings panel -->
-  <div [ngClass]=" !isSettingsPanelOpen ? 'translate-x-full transform duration-300  w-0' : ' inset-y-0 right-0'  "
-    class=" fixed inset-y-0 right-0 flex-col bg-white shadow-lg bg-opacity-20 w-80"
-    style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)">
-    <div class="flex items-center justify-between flex-shrink-0 p-2">
-      <h6 class="p-2 text-lg">Settings</h6>
-      <button (click)="this.isSettingsPanelOpen = ! this.isSettingsPanelOpen" class="p-2 rounded-md focus:outline-none focus:ring">
-        <svg class="w-6 h-6 text-gray-600 border border-sellar-primary" xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-    <div class="flex-1 max-h-full p-4 overflow-hidden hover:overflow-y-scroll">
-      <span>Settings Content</span>
-      <!-- Settings Panel Content ... -->
-     <div class="flex flex-row gap-4 items-center mt-2">
-      <div class="rounded-full w-6 h-6 bg-yellow-500">
 
-      </div>
-      <div class="rounded-full w-6 h-6 bg-green-500">
-
-      </div>
-      <div class="rounded-full w-6 h-6 bg-red-500">
-
-      </div>
-     </div>
-
-    </div>
-  </div>
-
+  <!-- [ngClass]=" !isSettingsPanelOpen ? 'translate-x-full transform duration-300  w-0' : 'inset-y-0 -translate-x-0 transform duration-300  w-56 right-0 bg-yellow-200'  " -->
+  <app-settings-panel
+   [isSettingsPanelOpen]="isSettingsPanelOpen"
+   (toggleSettingsPanel)="toggleSettingsMenu($event)"
+   >
+  </app-settings-panel>
 </div>

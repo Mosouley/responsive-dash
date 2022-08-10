@@ -1,20 +1,6 @@
-.tab {
-            overflow: hidden;
-            }
-            .tab-content {
-            max-height: 0;
-            transition: all 0.3s;
-            }
-            input:checked + .tab-label .test {
-                background-color: #37c936;
-            }
-            input:checked + .tab-label .test svg {
-                transform: rotate(180deg);
-                stroke: #fff;
-            }
-            input:checked + .tab-label::after {
-            transform: rotate(90deg);
-            }
-            input:checked ~ .tab-content {
-            max-height: 100vh;
-            }
+
+
+.grey-colour {
+/* background-color: #f0f1ef; #4964a1 #7eb57a #7b49d2
+#7b57f6 #f9f9fa #b9dObd #5e4978 #7ab378*/
+}
