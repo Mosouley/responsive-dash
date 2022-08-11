@@ -1,3 +1,4 @@
+import { KamonaDashComponent } from './../myapps/kamona-dash/kamona-dash.component';
 import { Dashboard1Component } from './../myapps/dashboard1/dashboard1.component';
 import { MainComponent } from '../myapps/main/main.component';
 import { DashComponent } from './dash/dash.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
   children: [
     { path: 'main', component: MainComponent },
     { path: 'analytics', component: Dashboard1Component },
-    { path: 'app1', component: DashComponent },
+    { path: 'dash2', component: KamonaDashComponent },
     {path: 'not-found', component: PageNotFoundComponent}]
    },
    {

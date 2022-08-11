@@ -160,7 +160,7 @@ export class SidenavComponent implements OnInit{
     },
     {
       name: 'Produits',
-      url: 'app1',
+      url: 'dash2',
       icon: 'qr_code',
       action: false
     },

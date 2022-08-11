@@ -6,13 +6,15 @@ import { CommonModule } from '@angular/common';
 import { Dashboard1Component } from './dashboard1/dashboard1.component';
 import { MainComponent } from './main/main.component';
 import { MaterialModule } from '../material/material.module';
+import { KamonaDashComponent } from './kamona-dash/kamona-dash.component';
 
 
 
 @NgModule({
   declarations: [
     Dashboard1Component,
-    MainComponent
+    MainComponent,
+    KamonaDashComponent
   ],
   imports: [
     CommonModule,
