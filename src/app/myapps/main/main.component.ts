@@ -8,7 +8,7 @@ import { MatAccordion } from '@angular/material/expansion/accordion';
 })
 export class MainComponent  {
   // @ViewChild(MatAccordion) accordion!: MatAccordion;
-  numCards = Array.from(Array(5).keys());
+  numCards = Array.from(Array(4).keys());
 
 
 }

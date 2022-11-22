@@ -68,9 +68,5 @@ export class NavbarComponent  {
 
     ]
 
-    test() {
-      console.log('Triggered from Navbar::::: ' + this.isSidebarOpen);
-
-    }
 
 }

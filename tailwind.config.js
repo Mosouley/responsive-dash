@@ -1,12 +1,39 @@
-const colors = require('tailwindcss/colors')
+function withOpacity(varName) {
+return ({opacityValue}) => {
+  if(opacityValue != undefined){
+    return `rgba(var(${varName}), ${opacityValue})`
+  }
+  return `rgba(var(${varName}))`
+}
+}
 
 module.exports = {
   mode: 'jit',
-  content: ['./src/**/*.{html,js}'],
-  purge: ["./**/*.html"]
+  content: ['./src/**/*.{html,js}']
 ,
   theme: {
     extend: {
+      textColor: {
+          skin: {
+            base:  withOpacity('--color-text-base'),
+            muted:  withOpacity('--color-text-muted'),
+            inverted:  withOpacity('--color-text-inverted'),
+          }
+      }
+    ,
+    backgroundColor: {
+      skin: {
+        fill:  withOpacity('--color-fill'),
+        'button-accent': withOpacity('--color-button-accent'),
+        'button-accent-hover': withOpacity('--color-button-accent-hover'),
+        'button-muted':withOpacity('--color-button-muted')
+      }
+    },
+    gradientColorStops: {
+      skin: {
+        hue:  withOpacity('--color-fill'),
+      }
+    },
       fontFamily: {
         sans:"'cairo'",
         Poppins: "'Poppins', sans-serif",
@@ -35,64 +62,19 @@ module.exports = {
         'default-white':'#fff',
         'sellar-primary': '#7b57f6',
         'windows-green':'#7ab378',
-        'light': 'var(--light)',
-        'dark': 'var(--dark)',
-        'darker': 'var(--darker)',
+        'light':  'var(--light)',
+        'dark':  'var(--dark)',
+        'darker':  'var(--darker)',
         'primary': {
-          'DEFAULT': 'var(--color-primary)',
-          '50': 'var(--color-primary-50)',
-          '100': 'var(--color-primary-100)',
-          'light': 'var(--color-primary-light)',
-          'lighter': 'var(--color-primary-lighter)',
-          'dark': 'var(--color-primary-dark)',
-          'darker': 'var(--color-primary-darker)',
+          'DEFAULT':  'var(--color-primary)',
+          '50':  'var(--color-primary-50)',
+          '100':  'var(--color-primary-100)',
+          'light':  'var(--color-primary-light)',
+          'lighter':  'var(--color-primary-lighter)',
+          'dark':  'var(--color-primary-dark)',
+          'darker':  'var(--color-primary-darker)',
         },
-        'secondary': {
-          'DEFAULT': colors.fuchsia[600],
-          '50': colors.fuchsia[50],
-          '100': colors.fuchsia[100],
-          'light': colors.fuchsia[500],
-          'lighter': colors.fuchsia[400],
-          'dark': colors.fuchsia[700],
-          'darker': colors.fuchsia[800],
-        },
-        'success': {
-          'DEFAULT': colors.green[600],
-          '50': colors.green[50],
-          '100': colors.green[100],
-          'light': colors.green[500],
-          'lighter': colors.green[400],
-          'dark': colors.green[700],
-          'darker': colors.green[800],
-        },
-        'warning': {
-          'DEFAULT': colors.orange[600],
-          '50': colors.orange[50],
-          '100': colors.orange[100],
-          'light': colors.orange[500],
-          'lighter': colors.orange[400],
-          'dark': colors.orange[700],
-          'darker': colors.orange[800],
-        },
-        'danger': {
-          'DEFAULT': colors.red[600],
-          '50': colors.red[50],
-          '100': colors.red[100],
-          'light': colors.red[500],
-          'lighter': colors.red[400],
-          'dark': colors.red[700],
-          'darker': colors.red[800],
-        },
-        'info': {
-          'DEFAULT': colors.cyan[600],
-          '50': colors.cyan[50],
-          '100': colors.cyan[100],
-          'light': colors.cyan[500],
-          'lighter': colors.cyan[400],
-          'dark': colors.cyan[700],
-          'darker': colors.cyan[800],
-        },
-      },
+      }
     },
   },
   plugins: [],

@@ -119,7 +119,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SidenavComponent implements OnInit{
 
   // cards template to display the  dashboard on cards
-  numCards = Array.from(Array(10).keys());
+  numCards = Array.from(Array(5).keys());
   // creating input and output variable for sidebar reduction
   @Input() isSidebarReduced = false;
   @Output () toggleSidebarReduce: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -139,7 +139,7 @@ export class SidenavComponent implements OnInit{
 
     {
       name: 'Categories',
-      url: 'home',
+      url: 'profile',
       icon: 'category',
       action: false,
       expandable: true,
@@ -151,8 +151,8 @@ export class SidenavComponent implements OnInit{
           action: false
         },
         {
-          name: 'Applications',
-          url: 'app1',
+          name: 'Outlook',
+          url: 'outlook',
           icon: 'fingerprint',
           action: false
         },
@@ -166,27 +166,27 @@ export class SidenavComponent implements OnInit{
     },
 
     {
-      name: 'Fournisseurs',
-      url: '',
+      name: 'DashboardUI',
+      url: 'dash-ui',
       icon: 'list',
       action: false
     },
     {
-      name: 'Clients',
-      url: 'main',
+      name: 'ColorDashboard',
+      url: 'color-dash',
       icon: 'contact_page',
       action: false
     },
     {
       name: 'Dépenses',
-      url: '',
+      url: 'bookmark',
       icon: 'fingerprint',
       action: false,
       expandable: true,
       children: [
         {
           name: 'Clients',
-          url: '',
+          url: 'profile',
           icon: 'contact_page',
           action: false
         },

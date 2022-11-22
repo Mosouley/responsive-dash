@@ -7,6 +7,9 @@ import { Dashboard1Component } from './dashboard1/dashboard1.component';
 import { MainComponent } from './main/main.component';
 import { MaterialModule } from '../material/material.module';
 import { KamonaDashComponent } from './kamona-dash/kamona-dash.component';
+import { DashboarduiComponent } from './dashboardui/dashboardui.component';
+import { ColorDashComponent } from './color-dash/color-dash.component';
+import { OutlookComponent } from './outlook/outlook.component';
 
 
 
@@ -14,7 +17,10 @@ import { KamonaDashComponent } from './kamona-dash/kamona-dash.component';
   declarations: [
     Dashboard1Component,
     MainComponent,
-    KamonaDashComponent
+    KamonaDashComponent,
+    DashboarduiComponent,
+    ColorDashComponent,
+    OutlookComponent
   ],
   imports: [
     CommonModule,

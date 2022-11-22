@@ -1,17 +1,27 @@
 <!--     style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)" -->
 <!--   class="hidden h-full  inset-y-0  lg:flex flex-col flex-shrink-0 max-h-screen overflow-hidden border-r bg-white shadow-lg lg:static lg:w-60 lg:shadow-lg" -->
-<div class="flex h-screen overflow-y-scroll bg-gray-50">
+<!-- bg-[#f7f7f4] -->
+<div class="flex h-screen overflow-y-scroll bg-lime-100">
 <!--   [ngClass]=" isSidebarOpen && !isSidebarReduced ? 'sm:w-12 transform place-items-center justify-center ml-1 transition-all duration-300 ease-in  ' : ' bg-cyan-600 w-60'"
   [ngClass]="isSidebarReduced ? ' transform items-center justify-center ml-1 transition-all duration-100 ease-in  ': 'transform-none'" -->
+  <!-- <app-settings-panel
+   [isSettingsPanelOpen]="isSidebarOpen"
+   (toggleSettingsPanel)="toggleSettingsMenu($event)"
+   >
+  </app-settings-panel> -->
 
+<!-- Important de traiter le isSidebar open a ce niveau
+C'est ici que ce controle l'apparaition et la disparition du sidebar-->
   <!-- Sidebar -->
+  <!--   [ngClass]="isSidebarReduced ? ' sm:w-12 transform place-items-center justify-center transition-all duration-300 ease-in bg-sellar-primary': 'transform ease-out duration-300 '"
+  [ngClass]=" isSidebarOpen && isSidebarReduced ? 'hidden transform transition-all duration-300  sm:w-12 ease-in ' : ' transform-none'" -->
+  <!--  [isSidebarReduced]="isSidebarReduced" -->
   <app-sidenav
   (toggleSidebarReduce)="toggleSidebarReduce($event)"
-  [isSidebarReduced]="isSidebarReduced"
   [isSidebarOpen]="isSidebarOpen"
-  [ngClass]=" isSidebarOpen ? ' transform transition-all duration-300 w-60 ease-in ' : ' -translate-x-full transition-all duration-300 ease-out w-0'"
-  [ngClass]="isSidebarReduced ? '  sm:w-12 transform place-items-center justify-center transition-all duration-300 ease-in bg-sellar-primary': 'transform ease-out duration-300 '"
-  [ngClass]=" isSidebarOpen && isSidebarReduced ? 'hidden transform transition-all duration-300  sm:w-12 ease-in ' : ' transform-none'"
+
+  [ngClass]=" isSidebarOpen ? '  transform transition-all duration-400 w-60 ease-out bg-blue-300' : ' -translate-x-full transition-all duration-300 ease-out w-0'"
+
   >
   </app-sidenav>
 
@@ -21,11 +31,14 @@
 
     <!-- Main content -->
     <div class="overflow-auto">
+      <!-- <img class="absolute inset-0 h-full w-full object-cover opacity-20"
+      src="/assets/img/world_map.jpeg"
+      alt="People working on laptops" /> -->
       <router-outlet></router-outlet>
     </div>
 
     <!-- Main footer -->
-    <app-footer class=" fixed justify-between gap-5 bottom-2 p-1"></app-footer>
+    <app-footer class=" fixed justify-end gap-1 bottom-0 p-1 bg-[#65309b] w-full"></app-footer>
   </div>
 
   <!-- Setting panel button -->

@@ -1,3 +1,8 @@
+import { OutlookComponent } from './../myapps/outlook/outlook.component';
+import { ProfileComponent } from './../myapps/profile/profile.component';
+import { BookmarkAppComponent } from './../myapps/bookmark-app/bookmark-app.component';
+import { ColorDashComponent } from './../myapps/color-dash/color-dash.component';
+import { DashboarduiComponent } from './../myapps/dashboardui/dashboardui.component';
 import { KamonaDashComponent } from './../myapps/kamona-dash/kamona-dash.component';
 import { Dashboard1Component } from './../myapps/dashboard1/dashboard1.component';
 import { MainComponent } from '../myapps/main/main.component';
@@ -13,7 +18,12 @@ const routes: Routes = [
   children: [
     { path: 'main', component: MainComponent },
     { path: 'analytics', component: Dashboard1Component },
+    { path: 'outlook', component: OutlookComponent },
+    { path: 'dash-ui', component: DashboarduiComponent },
     { path: 'dash2', component: KamonaDashComponent },
+    { path: 'color-dash', component: ColorDashComponent },
+    { path: 'bookmark', component: BookmarkAppComponent },
+    { path: 'profile', component: ProfileComponent },
     {path: 'not-found', component: PageNotFoundComponent}]
    },
    {

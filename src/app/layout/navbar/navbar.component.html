@@ -1,12 +1,12 @@
 <!-- style="background-image: url(assets/img/bg2.jpeg) ; background-size:cover "" -->
-<header class="flex-shrink-0 border-b  bg-default-white " >
+<header class="flex-shrink-0 border-b  bg-slate-200" >
   <div class="flex items-center justify-between p-1 ">
     <!-- Navbar left -->
     <div class="flex items-center space-x-3 justify-between ">
       <span class="p-1 text-xl font-semibold tracking-wider  lg:hidden">Yasin</span>
       <!-- Toggle sidebar button -->
-      <button (click)="isSidebarOpen = !isSidebarOpen; toggleSideNav.emit(isSidebarOpen); test()"
-        class="p-0 rounded focus:outline-none ">
+      <button (click)="isSidebarOpen = !isSidebarOpen; toggleSideNav.emit(isSidebarOpen)"
+        class="p-0 rounded focus:outline-none shadow-sm ">
         <mat-icon class=" text-default-primary">reorder</mat-icon>
       </button>
     </div>
@@ -105,7 +105,7 @@
       <!-- Search button -->
       <button class="relative">
         <input title="Search Bar" aria-label="search bar" role="search"
-          class="pr-8 pl-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out focus:border-black focus:cursor-text w-4 focus:w-64 placeholder-transparent focus:placeholder-gray-500 text-default-primary "
+          class="pr-8 pl-4 py-2 bg-transparent rounded-md cursor-pointer transition-all duration-300 ease-in-out focus:border-black focus:cursor-text w-4 focus:w-64 placeholder-transparent focus:placeholder-gray-500 text-default-primary "
           type="text" placeholder="Search here" />
         <i class="pointer-events-none absolute top-0 right-0 h-full flex items-center pr-3">
           <span class="material-icons">
@@ -114,7 +114,7 @@
         </i>
       </button>
 
-      <div class="group inline-block relative">
+      <!-- <div class="group inline-block relative">
         <button class=" text-gray-700 font-semibold py-2 px-2 rounded inline-flex items-center">
           <span class="mr-1 antialiased text-sm">User</span>
           <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -153,7 +153,7 @@
             <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-2 block whitespace-no-wrap" href="#">Three is the</a>
           </li>
         </ul>
-      </div>
+      </div> -->
 
 
       <div class="items-center hidden space-x-3 sm:flex " *ngFor="let link of links">

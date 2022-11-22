@@ -1,4 +1,4 @@
-<main class="flex-1 max-h-full p-2 overflow-hidden overflow-y-scroll gap-5">
+<main class="flex-1 max-h-full p-2 overflow-hidden overflow-y-scroll gap-2">
   <!-- Main content header -->
   <div
     class="flex flex-col items-start justify-between pb-6 space-y-4 border-b lg:items-center lg:space-y-0 lg:flex-row">
@@ -13,7 +13,7 @@
             </path>
           </svg>
         </span>
-        <span>View on Github</span>
+        <span><small>view on Github</small> </span>
       </a>
 
     </div>
@@ -36,7 +36,7 @@
           <mat-icon>account_circle</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <div class="grid grid-cols-1 gap-0 mt-6 sm:grid-cols-2 lg:grid-cols-4 hover:border-b ">
+      <div class="grid grid-rows-2 gap-0 mx-auto my-auto sm:grid-cols-2 lg:grid-cols-4 hover:border-b ">
         <div *ngFor=" let n of numCards">
           <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-2xl hover:duration-300
             hover:ease-in-out hover:ring-2 hover:scale-105">
@@ -54,8 +54,475 @@
           </div>
 
         </div>
+        <div *ngFor=" let n of numCards">
+          <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-2xl hover:duration-300
+            hover:ease-in-out hover:ring-2 hover:scale-105">
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col space-y-2">
+                <span class="text-gray-400 ">Total Users</span>
+                <span class="text-lg font-semibold text-sellar-primary">100,222</span>
+              </div>
+              <div class="p-10 bg-green-400 rounded-md origin-bottom -rotate-12 -translate-y-8 "></div>
+            </div>
+            <div>
+              <span class="inline-block px-2 text-sm text-white bg-green-300 rounded">14%</span>
+              <span>from 2019</span>
+            </div>
+          </div>
 
+        </div>
+        <div class="container my-12 mx-auto px-4 md:px-12">
+          <div class="flex flex-wrap -mx-1 lg:-mx-4">
+
+            <!-- Column -->
+            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+              <!-- Article -->
+              <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="#">
+                  <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                </a>
+
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                  <h1 class="text-lg">
+                    <a class="no-underline hover:underline text-black" href="#">
+                      Article Title
+                    </a>
+                  </h1>
+                  <p class="text-grey-darker text-sm">
+                    11/1/19
+                  </p>
+                </header>
+
+                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                  <a class="flex items-center no-underline hover:underline text-black" href="#">
+                    <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
+                    <p class="ml-2 text-sm">
+                      Author Name
+                    </p>
+                  </a>
+                  <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+                    <span class="hidden">Like</span>
+                    <i class="fa fa-heart"></i>
+                  </a>
+                </footer>
+
+              </article>
+              <!-- END Article -->
+
+            </div>
+            <!-- END Column -->
+
+            <!-- Column -->
+            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+              <!-- Article -->
+              <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="#">
+                  <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                </a>
+
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                  <h1 class="text-lg">
+                    <a class="no-underline hover:underline text-black" href="#">
+                      Article Title
+                    </a>
+                  </h1>
+                  <p class="text-grey-darker text-sm">
+                    11/1/19
+                  </p>
+                </header>
+
+                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                  <a class="flex items-center no-underline hover:underline text-black" href="#">
+                    <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
+                    <p class="ml-2 text-sm">
+                      Author Name
+                    </p>
+                  </a>
+                  <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+                    <span class="hidden">Like</span>
+                    <i class="fa fa-heart"></i>
+                  </a>
+                </footer>
+
+              </article>
+              <!-- END Article -->
+
+            </div>
+            <!-- END Column -->
+
+            <!-- Column -->
+            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+              <!-- Article -->
+              <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="#">
+                  <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                </a>
+
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                  <h1 class="text-lg">
+                    <a class="no-underline hover:underline text-black" href="#">
+                      Article Title
+                    </a>
+                  </h1>
+                  <p class="text-grey-darker text-sm">
+                    11/1/19
+                  </p>
+                </header>
+
+                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                  <a class="flex items-center no-underline hover:underline text-black" href="#">
+                    <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
+                    <p class="ml-2 text-sm">
+                      Author Name
+                    </p>
+                  </a>
+                  <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+                    <span class="hidden">Like</span>
+                    <i class="fa fa-heart"></i>
+                  </a>
+                </footer>
+
+              </article>
+              <!-- END Article -->
+
+            </div>
+            <!-- END Column -->
+
+            <!-- Column -->
+            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+              <!-- Article -->
+              <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="#">
+                  <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                </a>
+
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                  <h1 class="text-lg">
+                    <a class="no-underline hover:underline text-black" href="#">
+                      Article Title
+                    </a>
+                  </h1>
+                  <p class="text-grey-darker text-sm">
+                    11/1/19
+                  </p>
+                </header>
+
+                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                  <a class="flex items-center no-underline hover:underline text-black" href="#">
+                    <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
+                    <p class="ml-2 text-sm">
+                      Author Name
+                    </p>
+                  </a>
+                  <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+                    <span class="hidden">Like</span>
+                    <i class="fa fa-heart"></i>
+                  </a>
+                </footer>
+
+              </article>
+              <!-- END Article -->
+
+            </div>
+            <!-- END Column -->
+
+            <!-- Column -->
+            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+              <!-- Article -->
+              <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="#">
+                  <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                </a>
+
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                  <h1 class="text-lg">
+                    <a class="no-underline hover:underline text-black" href="#">
+                      Article Title
+                    </a>
+                  </h1>
+                  <p class="text-grey-darker text-sm">
+                    11/1/19
+                  </p>
+                </header>
+
+                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                  <a class="flex items-center no-underline hover:underline text-black" href="#">
+                    <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
+                    <p class="ml-2 text-sm">
+                      Author Name
+                    </p>
+                  </a>
+                  <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+                    <span class="hidden">Like</span>
+                    <i class="fa fa-heart"></i>
+                  </a>
+                </footer>
+
+              </article>
+              <!-- END Article -->
+
+            </div>
+            <!-- END Column -->
+
+            <!-- Column -->
+            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+              <!-- Article -->
+              <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="#">
+                  <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                </a>
+
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                  <h1 class="text-lg">
+                    <a class="no-underline hover:underline text-black" href="#">
+                      Article Title
+                    </a>
+                  </h1>
+                  <p class="text-grey-darker text-sm">
+                    11/1/19
+                  </p>
+                </header>
+
+                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                  <a class="flex items-center no-underline hover:underline text-black" href="#">
+                    <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
+                    <p class="ml-2 text-sm">
+                      Author Name
+                    </p>
+                  </a>
+                  <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+                    <span class="hidden">Like</span>
+                    <i class="fa fa-heart"></i>
+                  </a>
+                </footer>
+
+              </article>
+              <!-- END Article -->
+
+            </div>
+            <!-- END Column -->
+
+          </div>
+        </div>
+
+        <div class="my-5">
+          <div class="
+            flex
+            w-full
+            max-w-sm
+            mx-auto
+            overflow-hidden
+            bg-white
+            rounded-lg
+            shadow-md
+            dark:bg-gray-800
+          ">
+            <div class="flex items-center justify-center w-12 bg-green-500">
+              <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+              </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+              <div class="mx-3">
+                <span class="font-semibold text-green-500 dark:text-green-400">Success</span>
+                <p class="text-sm text-gray-600 dark:text-gray-200">
+                  Your account was registered!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="
+            flex
+            w-full
+            max-w-sm
+            mx-auto
+            overflow-hidden
+            bg-white
+            rounded-lg
+            shadow-md
+            dark:bg-gray-800
+            my-5
+          ">
+            <div class="flex items-center justify-center w-12 bg-blue-500">
+              <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM21.6667 28.3333H18.3334V25H21.6667V28.3333ZM21.6667 21.6666H18.3334V11.6666H21.6667V21.6666Z" />
+              </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+              <div class="mx-3">
+                <span class="font-semibold text-blue-500 dark:text-blue-400">Info</span>
+                <p class="text-sm text-gray-600 dark:text-gray-200">
+                  This channel archived by the owner!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="
+            flex
+            w-full
+            max-w-sm
+            mx-auto
+            overflow-hidden
+            bg-white
+            rounded-lg
+            shadow-md
+            dark:bg-gray-800
+            my-5
+          ">
+            <div class="flex items-center justify-center w-12 bg-yellow-400">
+              <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM21.6667 28.3333H18.3334V25H21.6667V28.3333ZM21.6667 21.6666H18.3334V11.6666H21.6667V21.6666Z" />
+              </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+              <div class="mx-3">
+                <span class="font-semibold text-yellow-400 dark:text-yellow-300">Warning</span>
+                <p class="text-sm text-gray-600 dark:text-gray-200">
+                  Your image size is too large!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="
+            flex
+            w-full
+            max-w-sm
+            mx-auto
+            overflow-hidden
+            bg-white
+            rounded-lg
+            shadow-md
+            dark:bg-gray-800
+          ">
+            <div class="flex items-center justify-center w-12 bg-red-500">
+              <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
+              </svg>
+            </div>
+
+            <div class="px-4 py-2 pb-5 -mx-3">
+              <div class="mx-3">
+                <span class="font-semibold text-red-500 dark:text-red-400">Error</span>
+                <p class="text-sm text-gray-600 dark:text-gray-200">
+                  Your email is already used!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel class=" bg-gray-100">
+      <mat-expansion-panel-header class="bg-gray-200">
+        <mat-panel-title class="text-sellar-primary">
+          Test Dashboard
+        </mat-panel-title>
+        <mat-panel-description class="justify-end text-sellar-primary">
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- <div class="grid grid-flow-col gap-0 mx-auto my-auto sm:grid-cols-2 lg:grid-cols-4 hover:border-b "> -->
+
+      <div class="sm:m-6 space-y-6 " >
+        <!-- Call to action -->
+        <div class=" theme-swiss relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+          <img class="absolute inset-0 h-full w-full object-cover opacity-30"
+            src="https://images.unsplash.com/photo-1613217784112-e0e197be6a0b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80&sat=-100"
+            alt="People working on laptops" />
+          <div class="absolute inset-0 bg-gradient-to-br from-skin-hue via-skin-hue to-transparent opacity-90"></div>
+          <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+              <span class="block">Focus on your content.</span>
+              <span class="block">We handle the distribution.</span>
+            </h2>
+            <p class="mt-4 text-lg leading-6 text-skin-muted">Ac euismod vel sit maecenas id pellentesque eu sed
+              consectetur. Malesuada adipiscing sagittis vel nulla nec.</p>
+            <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+              <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                <a href="#"
+                  class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">
+                  Get started </a>
+                <a href="#"
+                  class="text-skin-base bg-skin-button-muted flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-60 hover:bg-opacity-70 sm:px-8">
+                  Live demo </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+          <img class="absolute inset-0 h-full w-full object-cover opacity-30"
+            src="https://images.unsplash.com/photo-1613217784112-e0e197be6a0b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80&sat=-100"
+            alt="People working on laptops" />
+          <div class="absolute inset-0 bg-gradient-to-br from-skin-hue via-skin-hue to-transparent opacity-90"></div>
+          <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+              <span class="block">Focus on your content.</span>
+              <span class="block">We handle the distribution.</span>
+            </h2>
+            <p class="mt-4 text-lg leading-6 text-skin-muted">Ac euismod vel sit maecenas id pellentesque eu sed
+              consectetur. Malesuada adipiscing sagittis vel nulla nec.</p>
+            <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+              <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                <a href="#"
+                  class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">
+                  Get started </a>
+                <a href="#"
+                  class="text-skin-base bg-skin-button-muted flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-60 hover:bg-opacity-70 sm:px-8">
+                  Live demo </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="theme-neon relative bg-skin-button-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+          <img class="absolute inset-0 h-full w-full object-cover opacity-30"
+            src="https://images.unsplash.com/photo-1613217784112-e0e197be6a0b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80&sat=-100"
+            alt="People working on laptops" />
+          <div class="absolute inset-0 bg-gradient-to-br from-skin-hue via-skin-hue to-transparent opacity-90"></div>
+          <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+              <span class="block">Focus on your content.</span>
+              <span class="block">We handle the distribution.</span>
+            </h2>
+            <p class="mt-4 text-lg leading-6 text-skin-muted">Ac euismod vel sit maecenas id pellentesque eu sed
+              consectetur. Malesuada adipiscing sagittis vel nulla nec.</p>
+            <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+              <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                <a href="#"
+                  class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">
+                  Get started </a>
+                <a href="#"
+                  class="text-skin-base bg-skin-button-muted flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-60 hover:bg-opacity-70 sm:px-8">
+                  Live demo </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </mat-expansion-panel>
     <!-- #docregion disabled -->
     <mat-expansion-panel disabled>
@@ -65,13 +532,9 @@
           Panel disabled
         </mat-panel-title>
         <mat-panel-description class="justify-end">
-
-
           <mat-icon>map</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-
-
     </mat-expansion-panel>
 
     <mat-expansion-panel class="bg-gray-100">
@@ -80,83 +543,13 @@
           Other Dashboard
         </mat-panel-title>
         <mat-panel-description class="justify-end">
-          <mat-icon>schedule</mat-icon>
+          <mat-icon class="text-sellar-primary">schedule</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-        <img src="assets/img/beams.jpeg" alt="" class="absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 " width="1308" />
-        <div class="absolute inset-0 bg-[url(assets/img/grid2.png)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-          <!-- <div class="grid grid-cols-1 gap-0 mt-6 sm:grid-cols-2 lg:grid-cols-4 hover:border-b ">
-            <div *ngFor=" let n of numCards">
-              <div
-                class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-2xl hover:duration-75 hover:ease-in-out">
-                <div class="flex items-start justify-between">
-                  <div class="flex flex-col space-y-2">
-                    <span class="text-gray-400">Total Users</span>
-                    <span class="text-lg font-semibold">100,221</span>
-                  </div>
-                  <div class="p-10 bg-blue-600 -translate-y-10  rounded-md  shadow-red-200"></div>
-                </div>
-                <div>
-                  <span class="inline-block px-2 text-sm text-white bg-green-300 rounded">14%</span>
-                  <span>from 2019</span>
-                </div>
-              </div>
-
-            </div>
-          </div> -->
-          <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-            <div class="mx-auto max-w-md">
-              <img src="/img/logo.svg" class="h-6" alt="Tailwind Play" />
-              <div class="divide-y divide-gray-300/50">
-                <div class="space-y-6 py-8 text-base leading-7 text-gray-600">
-                  <p>An advanced online playground for Tailwind CSS, including support for things like:</p>
-                  <ul class="space-y-4">
-                    <li class="flex items-center">
-                      <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="11" />
-                        <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                      </svg>
-                      <p class="ml-4">
-                        Customizing your
-                        <code class="text-sm font-bold text-gray-900">tailwind.config.js</code> file
-                      </p>
-                    </li>
-                    <li class="flex items-center">
-                      <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="11" />
-                        <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                      </svg>
-                      <p class="ml-4">
-                        Extracting classes with
-                        <code class="text-sm font-bold text-gray-900">@apply</code>
-                      </p>
-                    </li>
-                    <li class="flex items-center">
-                      <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="11" />
-                        <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                      </svg>
-                      <p class="ml-4">Code completion with instant preview</p>
-                    </li>
-                  </ul>
-                  <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
-                </div>
-                <div class="pt-8 text-base font-semibold leading-7">
-                  <p class="text-gray-900">Want to dig deeper into Tailwind?</p>
-                  <p>
-                    <a href="https://tailwindcss.com/docs" class="text-sky-500 hover:text-sky-600">Read the docs &rarr;</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-
 
     </mat-expansion-panel>
 
-    <mat-expansion-panel class="bg-gray-400">
+    <mat-expansion-panel class="bg-gray-200">
       <mat-expansion-panel-header class="bg-gray-100">
         <mat-panel-title class="text-sellar-primary">
           Table Dashboard
@@ -221,7 +614,7 @@
                     Admin
                   </td>
                   <td class="px-6 py-3 text-sm font-medium text-right whitespace-nowrap">
-                    <a  class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                    <a class="text-indigo-600 hover:text-indigo-900">Edit</a>
                   </td>
                 </tr>
 
