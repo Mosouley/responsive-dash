@@ -1,7 +1,7 @@
 <!--     style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)" -->
 <!--   class="hidden h-full  inset-y-0  lg:flex flex-col flex-shrink-0 max-h-screen overflow-hidden border-r bg-white shadow-lg lg:static lg:w-60 lg:shadow-lg" -->
 <!-- bg-[#f7f7f4] -->
-<div class="flex h-screen overflow-y-scroll bg-lime-100">
+<div class="flex h-screen overflow-y-scroll bg-[#f7f7f4]">
 <!--   [ngClass]=" isSidebarOpen && !isSidebarReduced ? 'sm:w-12 transform place-items-center justify-center ml-1 transition-all duration-300 ease-in  ' : ' bg-cyan-600 w-60'"
   [ngClass]="isSidebarReduced ? ' transform items-center justify-center ml-1 transition-all duration-100 ease-in  ': 'transform-none'" -->
   <!-- <app-settings-panel
@@ -19,9 +19,10 @@ C'est ici que ce controle l'apparaition et la disparition du sidebar-->
   <app-sidenav
   (toggleSidebarReduce)="toggleSidebarReduce($event)"
   [isSidebarOpen]="isSidebarOpen"
-
-  [ngClass]=" isSidebarOpen ? '  transform transition-all duration-400 w-60 ease-out bg-blue-300' : ' -translate-x-full transition-all duration-300 ease-out w-0'"
-
+  [isSidebarReduced]="isSidebarReduced"
+  [ngClass]=" isSidebarOpen ? '  transform transition-all duration-200 w-60 ease-out' : ' -translate-x-full transition-all duration-300 ease-out w-0'"
+  [ngClass]="isSidebarReduced ? ' w-12 transform place-items-center justify-center transition-all duration-300 ease-in bg-sellar-primary': 'transform ease-out duration-300 '"
+  [ngClass]=" isSidebarOpen && isSidebarReduced ? ' transform transition-all duration-300 sm:w-12 ease-in ' : 'transform-none'"
   >
   </app-sidenav>
 

@@ -7,7 +7,11 @@
       <!-- Toggle sidebar button -->
       <button (click)="isSidebarOpen = !isSidebarOpen; toggleSideNav.emit(isSidebarOpen)"
         class="p-0 rounded focus:outline-none shadow-sm ">
-        <mat-icon class=" text-default-primary">reorder</mat-icon>
+
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-default-primary">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+        </svg>
+
       </button>
     </div>
 
@@ -107,11 +111,16 @@
         <input title="Search Bar" aria-label="search bar" role="search"
           class="pr-8 pl-4 py-2 bg-transparent rounded-md cursor-pointer transition-all duration-300 ease-in-out focus:border-black focus:cursor-text w-4 focus:w-64 placeholder-transparent focus:placeholder-gray-500 text-default-primary "
           type="text" placeholder="Search here" />
-        <i class="pointer-events-none absolute top-0 right-0 h-full flex items-center pr-3">
+        <!-- <i class="pointer-events-none absolute top-0 right-0 h-full flex items-center pr-3">
           <span class="material-icons">
             search
           </span>
-        </i>
+        </i> -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 scale-110 pointer-events-none absolute top-0 right-0 h-full flex items-center pr-3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+
       </button>
 
       <!-- <div class="group inline-block relative">
