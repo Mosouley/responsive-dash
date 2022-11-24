@@ -78,13 +78,13 @@
         class="align-middle border-t-inherit ">
         <!-- rounded-md duration-300 transform transition-transform  -->
         <!-- [ngClass]="{'active': 'bg-sellar-primary'}" -->
-        <li *ngFor="let sub of link.children; let i=index" matTooltip={{sub.name}}
+        <li *ngFor="let sub of link.children; let i=index" matTooltip={{sub.name}} [matTooltipPosition]="'right'"
           class="text-sm flex flex-row place-items-center justify-items-start space-y-1 px-8 mx-auto items-center  py-4 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap
           active:bg-yellow-200 rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out cursor-pointer"
 
           >
-          <span aria-hidden="true"
-          [ngClass]="isSidebarReduced ? ' items-center justify-center': 'translate-x-0 text-sm '"
+          <span
+          [ngClass]="isSidebarReduced ? ' items-center place-items-start left-0 bg-red-300': 'translate-x-0 text-sm '"
             >
             <mat-icon>{{link.children[i].icon}}</mat-icon>
           </span>
