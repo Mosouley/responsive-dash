@@ -4,7 +4,6 @@ import { BookmarkAppComponent } from './../myapps/bookmark-app/bookmark-app.comp
 import { ColorDashComponent } from './../myapps/color-dash/color-dash.component';
 import { DashboarduiComponent } from './../myapps/dashboardui/dashboardui.component';
 import { KamonaDashComponent } from './../myapps/kamona-dash/kamona-dash.component';
-import { Dashboard1Component } from './../myapps/dashboard1/dashboard1.component';
 import { MainComponent } from '../myapps/main/main.component';
 import { DashComponent } from './dash/dash.component';
 import { NgModule } from '@angular/core';
@@ -17,7 +16,7 @@ const routes: Routes = [
   { path: '', component: DashComponent ,
   children: [
     { path: 'main', component: MainComponent },
-    { path: 'analytics', component: Dashboard1Component },
+    { path: 'analytics', component: ProfileComponent },
     { path: 'outlook', component: OutlookComponent },
     { path: 'dash-ui', component: DashboarduiComponent },
     { path: 'dash2', component: KamonaDashComponent },

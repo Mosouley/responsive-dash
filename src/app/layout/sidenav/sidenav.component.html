@@ -47,7 +47,8 @@
     <ul *ngFor=" let link of links;let i=index" class="focus:bg-yellow-200 hover:bg-slate-200">
       <a (click)="link.action = !link.action" matTooltip={{link.name}}
         class="cursor-pointer flex items-center p-1 text-gray-500 text-sm transition-colors rounded-t-sm mr-1  align-middle "
-        role="button">
+        role="button"
+        [routerLink]=[link.url]>
       <!-- icon de chaque lien du sidebar -->
         <span aria-hidden="true"
           [ngClass]="isSidebarReduced ? ' items-center justify-center': 'translate-x-0 text-sm '">
@@ -55,7 +56,7 @@
         </span>
         <!-- Nom de chaque menu du lien sidebar -->
         <span [ngClass]="isSidebarReduced ? 'hidden ': 'translate-x-0 pl-2'"
-          [routerLink]=[link.url]>{{link.name}}
+          >{{link.name}}
         </span>
         <!-- critical to put ml-auto on the span to keep the expand icon on the right -->
         <!--  condition pour les menus ayant des sous menus -->
@@ -81,7 +82,7 @@
         <li *ngFor="let sub of link.children; let i=index" matTooltip={{sub.name}} [matTooltipPosition]="'right'"
           class="text-sm flex flex-row place-items-center justify-items-start space-y-1 px-8 mx-auto items-center  py-4 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap
           active:bg-yellow-200 rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out cursor-pointer"
-
+          routerLink="{{link.children[i].url}}"
           >
           <span
           [ngClass]="isSidebarReduced ? ' items-center place-items-start left-0 bg-red-300': 'translate-x-0 text-sm '"
@@ -90,7 +91,7 @@
           </span>
           <span role="menuitem"
             class="block p-2 text-sm text-gray-700 transition-colors duration-200 rounded-md hover:text-gray-700"
-            [ngClass]="isSidebarReduced ? ' hidden ': 'translate-x-0 '" routerLink="{{link.children[i].url}}">
+            [ngClass]="isSidebarReduced ? ' hidden ': 'translate-x-0 '" >
             {{ link.children[i].name }}
           </span>
         </li>

@@ -1,3 +1,4 @@
+import { SideNavbComponent } from './side-nav/side-navb.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { SharedModule } from './../shared/shared.module';
 import { RouterModule } from '@angular/router';
@@ -19,7 +20,8 @@ import { SettingsPanelComponent } from './settings-panel/settings-panel.componen
     SidenavComponent,
     DashComponent,
     FooterComponent,
-    SettingsPanelComponent
+    SettingsPanelComponent,
+    SideNavbComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { SettingsPanelComponent } from './settings-panel/settings-panel.componen
     SidenavComponent,
     RouterModule,
     DashComponent,
-    FooterComponent
+    FooterComponent,
+    SideNavbComponent
   ]
 })
 export class LayoutModule { }
